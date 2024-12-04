@@ -1,5 +1,3 @@
-### SCAFFOLD ###
-
 import collections
 import functools
 import re
@@ -13,8 +11,13 @@ filename = "input.txt"
 input = read_input_from_file(filename)
 lines = input_lines(input)
 
-### END ###
 
-
-if __name__ == '__main__':
-    print('This is the repository for my advent of code stuffs.. yay me. Do ur best !')
+string = str(input)
+pattern = r'mul\(\d{1,3},\d{1,3}\)'
+matches = re.findall(pattern, string)
+out = 0
+for match in matches:
+    match = match.strip("mul(").strip(")")
+    m1, m2 = int(match.split(',')[0]), int(match.split(',')[1])
+    out += m1 * m2
+print(out)

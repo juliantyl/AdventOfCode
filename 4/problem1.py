@@ -1,5 +1,3 @@
-### SCAFFOLD ###
-
 import collections
 import functools
 import re
@@ -12,9 +10,3 @@ filename = "input.txt"
 
 input = read_input_from_file(filename)
 lines = input_lines(input)
-
-### END ###
-
-
-if __name__ == '__main__':
-    print('This is the repository for my advent of code stuffs.. yay me. Do ur best !')
