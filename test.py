@@ -12,6 +12,7 @@ filename = "input.txt"
 
 input = read_input_from_file(filename)
 lines = input_lines(input)
+lines = lines[:len(lines) - 1]
 
 ### END ###
 
