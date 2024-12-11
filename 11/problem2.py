@@ -4,6 +4,7 @@ import re
 from collections import Counter
 from itertools import cycle, combinations, accumulate, chain
 from aoc.helpers import output, read_input_from_file, input_lines
+from functools import lru_cache
 
 
 filename = "input.txt"
@@ -19,46 +20,35 @@ encountered = {}
 
 
 def blink(ls):
-    new_items = {}
-    for i, stone in enumerate(ls):
+    for stone in ls:
         if stone == 0:
-            ls[i] = 1
+            yield 1
         elif len(str(stone)) % 2 == 0:
-
             stone_str = str(stone)
-            mid = int(len(stone_str) / 2)
-            new_items[i] = [int(stone_str[:mid]) , int(stone_str[mid:])]
+            mid = len(stone_str) // 2
+            yield int(stone_str[:mid])
+            yield int(stone_str[mid:])
         else:
-            ls[i] = 2024 * stone
+            yield 2024 * stone
 
-    out = []
-    for i, stone in enumerate(ls):
-        if i not in new_items:
-            out += [ls[i]]
-        else:
-            out += new_items[i]
-    return out
 
-def blink25(ls, encountered, flag, go):
-    out = []
-    for i, stone in enumerate(ls):
-        inner_out = [stone]
+def blink25(ls, encountered):
+    for stone in ls:
         if stone in encountered:
-            if flag == 2:
-                go += len(encountered[stone])
-            else:
-                out += encountered[stone]
+            for result in encountered[stone]:
+                yield result
         else:
-            for j in range(25):
-                inner_out = blink(inner_out)
+            inner_out = [stone]
+            for _ in range(15):
+                inner_out = list(blink(inner_out))
             encountered[stone] = inner_out
-            out += inner_out
-    return out, go
+            for result in inner_out:
+                yield result
 
 
 out = input
-global_offset = 0
-for i in range(3):
+for i in range(5):
     print(i)
-    out, global_offset = blink25(out, encountered, i, global_offset)
-print(len(out) + global_offset)
+    out = blink25(out, encountered)
+total_length = sum(1 for _ in out)
+print(total_length)
