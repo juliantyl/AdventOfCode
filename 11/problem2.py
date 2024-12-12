@@ -20,35 +20,49 @@ encountered = {}
 
 
 def blink(ls):
+    out = []
     for stone in ls:
         if stone == 0:
-            yield 1
+            out.append(1)
         elif len(str(stone)) % 2 == 0:
             stone_str = str(stone)
             mid = len(stone_str) // 2
-            yield int(stone_str[:mid])
-            yield int(stone_str[mid:])
+            out.append(int(stone_str[:mid]))
+            out.append(int(stone_str[mid:]))
         else:
-            yield 2024 * stone
+            out.append(2024 * stone)
+    return out
 
 
-def blink25(ls, encountered):
+def blink25(ls, encountered, flag):
+    oa = 0
+    out = []
     for stone in ls:
         if stone in encountered:
+            if flag == 2:
+                oa += len(encountered[stone])
             for result in encountered[stone]:
-                yield result
+                out.append(result)
         else:
             inner_out = [stone]
-            for _ in range(15):
-                inner_out = list(blink(inner_out))
+            for _ in range(25):
+                inner_out = blink(inner_out)
             encountered[stone] = inner_out
             for result in inner_out:
-                yield result
+                out.append(result)
+    return out, oa
 
 
 out = input
-for i in range(5):
-    print(i)
-    out = blink25(out, encountered)
-total_length = sum(1 for _ in out)
-print(total_length)
+answer = 0
+offset = 0
+for item in out:
+    print(item)
+    curr = [item]
+    for i in range(3):
+        print(i)
+        curr, offset = blink25(curr, encountered, i)
+    answer += len(curr) + offset
+    print(answer)
+print('final')
+print(answer)
