@@ -6,7 +6,7 @@ from itertools import cycle, combinations, accumulate, chain
 from aoc.helpers import output, read_input_from_file, input_lines
 
 
-filename = "test.txt"
+filename = "input.txt"
 
 input = read_input_from_file(filename)
 lines = input_lines(input)
@@ -32,6 +32,16 @@ def create_list_touching(curr, touched):
         if item not in touched:
             output += create_list_touching(item, touched)
     return output
+
+def creat_list_adjacent(pos, otherls):
+    ls = [(pos[0] + 1, pos[1]), (pos[0] - 1, pos[1]), (pos[0], pos[1] + 1), (pos[0], pos[1] - 1),
+          (pos[0] + 1, pos[1] - 1), (pos[0] - 1, pos[1] + 1), (pos[0] + 1, pos[1] + 1), (pos[0] - 1, pos[1] - 1)]
+    out = []
+    for item in ls:
+        if item[0] >= IMIN and item[0] < IMAX and item[1] >= JMIN and item[1] < JMAX and lines[item[0]][item[1]] == \
+                lines[pos[0]][pos[1]] and item in otherls:
+            out.append(item)
+    return out
 
 def up(pos):
     if pos is None: return None
@@ -61,6 +71,39 @@ def right(pos):
         return item
     return None
 
+def check_corners(pos, otherls):
+    corners = 0
+    adj = creat_list_adjacent(pos, otherls)
+    # TL corner
+    if up(pos) in adj and left(pos) in adj:
+        if up(left(pos)) not in adj:
+            corners += 1
+    # TR
+    if up(pos) in adj and right(pos) in adj:
+        if up(right(pos)) not in adj:
+            corners += 1
+    # BR
+    if down(pos) in adj and right(pos) in adj:
+        if down(right(pos)) not in adj:
+            corners += 1
+    # BL
+    if down(pos) in adj and left(pos) in adj:
+        if down(left(pos)) not in adj:
+            corners += 1
+    # TL in
+    if up(pos) not in adj and left(pos) not in adj:
+        corners += 1
+    # TR in
+    if up(pos) not in adj and right(pos) not in adj:
+        corners += 1
+    # BR in
+    if down(pos) not in adj and right(pos) not in adj:
+        corners += 1
+    # BL in
+    if down(pos) not in adj and left(pos) not in adj:
+        corners += 1
+    return corners
+
 IMIN = 0
 IMAX = len(lines)
 JMIN = 0
@@ -82,74 +125,14 @@ while unexplored:
     curr_list = create_list_touching(curr, set())
     area_dic[id] = 0
     peri_dic[id] = 0
-    total_sides = 4
-    leftmost = curr
-    # print(curr_list)
+    corners = 0
     for item in curr_list:
         if item in unexplored:
             unexplored.remove(item)
-        if item[1] < leftmost[1]:
-            leftmost = item
         area_dic[id] += 1
+        corners += check_corners(item, curr_list)
     # find the leftmost point
-
-    current_tl = leftmost
-    sides = 0
-    dir = "up"
-    # print('start')
-    visited = set()
-    while True:
-        # first check up
-        if dir == "up":
-            if up(current_tl) in curr_list:
-                if left(up(current_tl)) in curr_list:
-                    dir = "left"
-                    current_tl = left(up(current_tl))
-                    sides += 1
-                else:
-                    current_tl = up(current_tl)
-            else:
-                dir = "right"
-                sides += 1
-        elif dir == "right":
-            if right(current_tl) in curr_list:
-                if up(right(current_tl)) in curr_list:
-                    dir = "up"
-                    current_tl = up(right(current_tl))
-                    sides += 1
-                else:
-                    current_tl = right(current_tl)
-            else:
-                dir = "down"
-                sides += 1
-        elif dir == "down":
-            if down(current_tl) in curr_list:
-                if right(down(current_tl)) in curr_list:
-                    dir = "right"
-                    current_tl = right(down(current_tl))
-                    sides += 1
-                else:
-                    current_tl = down(current_tl)
-            else:
-                dir = "left"
-                sides += 1
-        elif dir == "left":
-            if left(current_tl) in curr_list:
-                if down(left(current_tl)) in curr_list:
-                    dir = "down"
-                    current_tl = down(left(current_tl))
-                    sides += 1
-                else:
-                    current_tl = left(current_tl)
-            else:
-                dir = "up"
-                sides += 1
-        # print(dir, current_tl, leftmost, lines[current_tl[0]][current_tl[1]])
-        if dir == "up" and current_tl == leftmost:
-            # print('broke')
-            break
-
-    peri_dic[id] = sides
+    peri_dic[id] = corners
     id += 1
 
 out = 0
