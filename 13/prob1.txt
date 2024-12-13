@@ -1,0 +1,321 @@
+no solution
+no solution
+Solution found with cost: 301
+no solution
+no solution
+Solution found with cost: 83
+Solution found with cost: 221
+Solution found with cost: 101
+no solution
+no solution
+no solution
+Solution found with cost: 231
+Solution found with cost: 151
+Solution found with cost: 241
+no solution
+Solution found with cost: 183
+no solution
+Solution found with cost: 341
+no solution
+no solution
+Solution found with cost: 96
+no solution
+Solution found with cost: 144
+no solution
+no solution
+Solution found with cost: 322
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+Solution found with cost: 65
+Solution found with cost: 31
+Solution found with cost: 318
+Solution found with cost: 60
+no solution
+no solution
+Solution found with cost: 83
+no solution
+no solution
+Solution found with cost: 73
+Solution found with cost: 117
+no solution
+no solution
+Solution found with cost: 151
+no solution
+Solution found with cost: 221
+Solution found with cost: 305
+Solution found with cost: 202
+Solution found with cost: 144
+Solution found with cost: 248
+Solution found with cost: 126
+Solution found with cost: 264
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+Solution found with cost: 254
+Solution found with cost: 170
+no solution
+no solution
+Solution found with cost: 192
+no solution
+Solution found with cost: 227
+no solution
+Solution found with cost: 133
+no solution
+no solution
+no solution
+Solution found with cost: 103
+no solution
+Solution found with cost: 94
+no solution
+Solution found with cost: 321
+no solution
+Solution found with cost: 101
+no solution
+Solution found with cost: 260
+Solution found with cost: 391
+Solution found with cost: 245
+Solution found with cost: 129
+no solution
+no solution
+no solution
+Solution found with cost: 264
+Solution found with cost: 220
+Solution found with cost: 130
+no solution
+Solution found with cost: 136
+no solution
+Solution found with cost: 307
+Solution found with cost: 303
+no solution
+Solution found with cost: 305
+Solution found with cost: 279
+Solution found with cost: 291
+no solution
+Solution found with cost: 131
+no solution
+Solution found with cost: 241
+no solution
+Solution found with cost: 297
+no solution
+no solution
+no solution
+no solution
+Solution found with cost: 239
+Solution found with cost: 98
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+Solution found with cost: 122
+no solution
+Solution found with cost: 198
+Solution found with cost: 282
+no solution
+no solution
+Solution found with cost: 205
+Solution found with cost: 335
+Solution found with cost: 126
+Solution found with cost: 47
+Solution found with cost: 111
+Solution found with cost: 112
+Solution found with cost: 360
+no solution
+Solution found with cost: 79
+no solution
+no solution
+no solution
+Solution found with cost: 185
+Solution found with cost: 155
+no solution
+no solution
+no solution
+Solution found with cost: 87
+Solution found with cost: 177
+no solution
+Solution found with cost: 97
+Solution found with cost: 293
+no solution
+no solution
+Solution found with cost: 241
+Solution found with cost: 193
+Solution found with cost: 245
+Solution found with cost: 350
+no solution
+Solution found with cost: 158
+Solution found with cost: 66
+Solution found with cost: 212
+Solution found with cost: 252
+Solution found with cost: 270
+no solution
+Solution found with cost: 270
+Solution found with cost: 78
+no solution
+Solution found with cost: 300
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+Solution found with cost: 98
+no solution
+Solution found with cost: 117
+no solution
+Solution found with cost: 156
+no solution
+no solution
+no solution
+no solution
+no solution
+Solution found with cost: 331
+no solution
+Solution found with cost: 276
+no solution
+Solution found with cost: 112
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+no solution
+Solution found with cost: 125
+no solution
+Solution found with cost: 106
+no solution
+Solution found with cost: 190
+no solution
+no solution
+Solution found with cost: 116
+no solution
+Solution found with cost: 148
+Solution found with cost: 77
+Solution found with cost: 89
+Solution found with cost: 215
+no solution
+Solution found with cost: 359
+no solution
+no solution
+Solution found with cost: 192
+no solution
+no solution
+Solution found with cost: 271
+Solution found with cost: 45
+Solution found with cost: 217
+no solution
+Solution found with cost: 269
+Solution found with cost: 207
+Solution found with cost: 232
+Solution found with cost: 188
+no solution
+no solution
+no solution
+Solution found with cost: 169
+no solution
+Solution found with cost: 39
+Solution found with cost: 192
+Solution found with cost: 133
+Solution found with cost: 114
+Solution found with cost: 54
+no solution
+Solution found with cost: 74
+no solution
+no solution
+Solution found with cost: 179
+no solution
+no solution
+no solution
+Solution found with cost: 148
+no solution
+no solution
+Solution found with cost: 331
+Solution found with cost: 275
+no solution
+no solution
+Solution found with cost: 192
+Solution found with cost: 121
+no solution
+no solution
+Solution found with cost: 226
+no solution
+Solution found with cost: 359
+no solution
+Solution found with cost: 249
+Solution found with cost: 174
+no solution
+no solution
+no solution
+Solution found with cost: 308
+Solution found with cost: 353
+Solution found with cost: 204
+Solution found with cost: 110
+no solution
+Solution found with cost: 165
+no solution
+Solution found with cost: 349
+Solution found with cost: 388
+no solution
+Solution found with cost: 122
+no solution
+Solution found with cost: 345
+Solution found with cost: 354
+no solution
+Solution found with cost: 310
+no solution
+Solution found with cost: 354
+Solution found with cost: 252
+no solution
+Solution found with cost: 299
+Solution found with cost: 140
+Solution found with cost: 258
+no solution
+Solution found with cost: 134
+Solution found with cost: 94
+no solution
+Solution found with cost: 301
+no solution
+Solution found with cost: 196
+no solution
+Solution found with cost: 210
+Solution found with cost: 280
+Solution found with cost: 118
+Solution found with cost: 88
+no solution
+no solution
+Solution found with cost: 68
+Solution found with cost: 129
+Solution found with cost: 288
+no solution
+Solution found with cost: 211
+no solution
+no solution
+Solution found with cost: 98
+no solution
+Solution found with cost: 322
+no solution
+no solution
+no solution
+Solution found with cost: 164
+Solution found with cost: 349
+Solution found with cost: 351
+Solution found with cost: 319
+Solution found with cost: 182
+no solution
+Solution found with cost: 248
+Solution found with cost: 110
+no solution
+32026
