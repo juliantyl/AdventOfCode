@@ -6,6 +6,8 @@ from itertools import cycle, combinations, accumulate, chain
 from aoc.helpers import output, read_input_from_file, input_lines
 from functools import lru_cache
 
+import sys
+
 
 filename = "input.txt"
 
@@ -16,53 +18,29 @@ input = [int(_) for _ in input.split(" ")]
 # even number of digits splits into 2
 # else multiplied by num * 2024
 
+# len stones = len stones - 1 + len (2 digit numbers)
+# what is len of 2 digit numbers
+sys.setrecursionlimit(10000)
 encountered = {}
 
+def getlen(stone, round_remaining):
+    if round_remaining == 0:
+        return 1
+    elif stone == 0:
+        if (stone, round_remaining) not in encountered:
+            encountered[(stone, round_remaining)] = getlen(1, round_remaining - 1)
+        return encountered[(stone, round_remaining)]
+    elif len(str(stone)) % 2 == 0:
+        mid = int(len(str(stone)) / 2)
+        if (stone, round_remaining) not in encountered:
+            encountered[(stone, round_remaining)] = getlen(int(str(stone)[:mid]), round_remaining - 1) + getlen(int(str(stone)[mid:]), round_remaining - 1)
+        return encountered[(stone, round_remaining)]
+    else:
+        if (stone, round_remaining) not in encountered:
+            encountered[(stone, round_remaining)] = getlen(stone*2024, round_remaining - 1)
+        return encountered[(stone, round_remaining)]
 
-def blink(ls):
-    out = []
-    for stone in ls:
-        if stone == 0:
-            out.append(1)
-        elif len(str(stone)) % 2 == 0:
-            stone_str = str(stone)
-            mid = len(stone_str) // 2
-            out.append(int(stone_str[:mid]))
-            out.append(int(stone_str[mid:]))
-        else:
-            out.append(2024 * stone)
-    return out
-
-
-def blink25(ls, encountered, flag):
-    oa = 0
-    out = []
-    for stone in ls:
-        if stone in encountered:
-            if flag == 2:
-                oa += len(encountered[stone])
-            for result in encountered[stone]:
-                out.append(result)
-        else:
-            inner_out = [stone]
-            for _ in range(25):
-                inner_out = blink(inner_out)
-            encountered[stone] = inner_out
-            for result in inner_out:
-                out.append(result)
-    return out, oa
-
-
-out = input
-answer = 0
-offset = 0
-for item in out:
-    print(item)
-    curr = [item]
-    for i in range(3):
-        print(i)
-        curr, offset = blink25(curr, encountered, i)
-    answer += len(curr) + offset
-    print(answer)
-print('final')
-print(answer)
+out = 0
+for stone in input:
+    out += getlen(stone, 2000)
+print(out)
